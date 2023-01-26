@@ -44,7 +44,7 @@ module.exports = {
 
                 databaseClient.query(sql, async (err, result, fields) => {
                     if (err) throw err;
-                    if (result === []) {
+                    if (!result.length) {
                         interaction.reply({ content: 'Nenhuma sugestão, experimente enviar uma!', ephemeral: true});
                     } else {
                         let fields = []
